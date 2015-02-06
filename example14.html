@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+<head>
+	<title>example 14</title>
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script>
+	 var abc = angular.module('nameApp', []);
+
+      abc.controller('nameCtrl', function ($scope){
+        $scope.names = ['Larry', 'Curly', 'Moe','o jugni o'];
+        $scope.aarrr = ['ho', 'na', 'tha', 'payaar'];
+      });
+
+	</script>
+</head>
+
+
+<body ng-controller = "nameCtrl">
+	<ul>
+		<li ng-repeat="name in aarrr">{{name}}</li>
+		<li ng-repeat="nam in names">{{nam}}</li>
+
+	</ul>
+
+</body>
+</html>

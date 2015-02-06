@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app = "nameApp">
+<head>
+	<title>example 13</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	
+	<script>
+	var nameApp = angular.module('nameApp', []);
+	
+	nameApp.controller('NameCtrl' , function($scope) {
+		$scope.firstName;
+		
+		// $scope.lastName;
+
+		// $scope.$watch('lastName', function(newValue, oldValue) {
+		// 	console.log('new value is :' + newValue);
+		// });
+
+		setTimeout(function() {
+			$scope.lastName = 'Hasan';
+			// $scope.$apply();
+		}, 1000);
+	});
+	</script>
+</head>
+
+
+<body ng-controller = "NameCtrl">
+	First Name : <input ng-model = "firstName" type="text"><br><br>
+	Last Name : <input ng-model = "lastName" type="text"><br><br>
+	Hello {{firstName}} {{lastName}}
+</body>
+
+
+</html>

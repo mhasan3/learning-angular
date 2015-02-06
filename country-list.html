@@ -1,0 +1,12 @@
+Search:<input ng-model="query" type="text"/>
+
+<table>
+	<tr>
+		<th> <a href="" ng-click="sortField='name'; reverse = !reverse ">country</a></th>
+		<th><a href="" ng-click="sortField = 'population'; reverse = !reverse">Population</a></th>
+	</tr>
+	<tr ng-repeat="country in countries | filter : query | orderBy:sortField:reverse">
+		<td> {{country.name}} </td>
+		<td> {{country.population}} </td>
+	</tr>
+</table>

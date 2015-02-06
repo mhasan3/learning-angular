@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app = "nameRemove">
+<head>
+	<title>example 17</title>
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+	<script>
+	 var app = angular.module('nameRemove',[]);
+
+	 app.controller('nameCtrl', function($scope) {
+	 	$scope.names = [];
+
+	 	$scope.addName = function() {
+	 		$scope.names.push($scope.nameEntered);
+	 		$scope.nameEntered = '';
+	 	};
+
+	 	$scope.removeName = function(name) {
+	 		var i = $scope.names.indexOf(name);
+	 		console.log('index of name is :' + i);
+	 		$scope.names.splice(i,1);
+	 	};
+	 });
+
+	</script>
+</head>
+
+
+<body ng-controller = "nameCtrl">
+	
+	<ul>
+			<li ng-repeat="name in names">{{name}} <a href="" ng-click = "removeName(name)">[X]</a> </li>
+	</ul>
+
+	<form ng-submit = "addName()">
+		<input type="text" ng-model = "nameEntered">
+		<input type="submit" value="Add">
+	</form>
+
+</body>
+
+</html>
