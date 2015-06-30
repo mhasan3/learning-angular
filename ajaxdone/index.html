@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hello</title>
+
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+
+</head>
+<body>
+
+	<div ng-app="allApp"> 
+		<div ng-controller="allCtrl">
+		
+		<form name="myForm" nonvalidate>
+			<input type="hidden" name="user_id" ng-model="fromData.user_id" >
+
+			<p>Username:<br>
+				<input type="text" name="username" ng-model="fromData.username" placeholder="Enter your userName" required></input>
+					<span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
+					<span ng-show="myForm.username.$error.required">user name is required</span>
+					</span>
+			</p>
+
+			<p>Email:<br>
+				<input type="email" name="email" ng-model="fromData.email" placeholder="Enter your mail" required></input>
+					<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+					<span ng-show="myForm.email.$error.required">Email is required.</span>
+					<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+					</span>
+			</p>
+
+			<p>password:<br>
+				<input type="password" name="password" ng-model="fromData.password" placeholder="Enter your password" ng-minlength="4" required></inputt>
+					<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid"> 
+					<span ng-show="myForm.password.$error.required">password is required(minimum length is 4 including a number)</span>
+					</span>
+			</p>
+
+			<p>
+				<button type="button"  
+					ng-disabled="myForm.$invalid"
+					ng-click="doSubmit()"
+					>
+				Submit info</button>
+			</p>
+			<p>
+				<button type="button"  
+					ng-click="get_info()"
+					>
+				fetch info</button>
+			</p>
+		</form>
+		</div>
+	</div>
+
+
+	<script>
+		var app =angular.module('allApp',[]);
+
+		app.controller("allCtrl",function($scope , $http){
+
+			//$scope.items = [{'name':"merin"},{"name":"shaad"}];
+
+
+			$scope.doSubmit = function(){
+				$http({
+					method : 'post',
+					url: "db.php?action=add_info",
+					headers : {
+						'Content-Type':'application/x-www-form-urlencoded'
+					},
+					data : jQuery.param({'data':$scope.fromData})
+				}).success(function(res){
+					console.log(res);
+					
+				});
+			}
+
+			$scope.get_info = function() {
+				$http({
+					method : 'get',
+					url: "db.php?action=get_info",
+					headers : {
+						'Content-Type':'application/x-www-form-urlencoded'
+					},
+					//data : jQuery.param({'data':$scope.fromData})
+				}).success(function(res){
+					console.log(res);
+					
+				});
+				}
+		});
+
+	</script>
+	
+</body>
+</html>

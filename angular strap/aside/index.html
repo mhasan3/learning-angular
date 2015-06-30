@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html ng-app="mgcrea.ngStrapDocs">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/angular-motion.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/bootstrap-additions.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libraries.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/main.min.css">
+    <script src="//code.angularjs.org/1.3.8/angular.min.js" data-semver="1.3.8"></script>
+    <script src="//code.angularjs.org/1.3.8/angular-animate.min.js" data-semver="1.3.8"></script>
+    <script src="//code.angularjs.org/1.3.8/angular-sanitize.min.js" data-semver="1.3.8"></script>
+    <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.1.6"></script>
+    <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.1.6"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+
+<!-- alert demo starts here -->
+
+	<div class="bs-docs-section well" ng-controller="AlertDemoCtrl">
+
+		    <button class="btn btn-lg btn-primary" data-placement="top-right" data-container="body" data-duration="3" bs-alert="alert">alert Button 1
+		      <br />
+		      <small>(using an object)</small>
+		    </button>
+
+		    <button class="btn btn-lg btn-primary" title="{{alert.title}}" data-content="{{alert.content}}" data-type="success" data-container="#alerts-container" bs-alert>alert Button 2
+		      <br />
+		      <small>(using data-attrs)</small>
+		    </button>
+
+		    <button class="btn btn-lg btn-danger" data-template="" data-placement="top" data-duration="3" data-animation="am-fade-and-slide-top" data-container="body" data-keyboard="true" bs-alert="alert">Custom alert
+		      <br />
+		      <small>(using data-template)</small>
+		    </button>
+
+	</div>
+	    
+
+	<hr>
+
+
+	<div id="alerts-container"></div>
+<!-- alert demo ends here -->
+
+<!-- modal demo starts here -->
+  
+	<div class="bs-docs-section well" ng-controller="ModalDemoCtrl">
+		
+		<button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal">button for modal	
+    	</button>
+
+	</div>
+<!-- modal demo ends here -->
+	<hr>
+
+
+<!-- aside demo starts here -->
+
+	<div class="bs-docs-section well" ng-controller="asideCtrl">
+
+		<button type="button" class="btn btn-lg btn-primary" bs-aside="aside">button for aside
+		  
+		 
+		</button>
+		
+	</div>
+
+<!-- aside demo ends here -->
+
+<hr>
+
+  
+<!-- tooltip demo starts here -->
+	<div class="bs-docs-section well" ng-controller="TooltipDemoCtrl">
+	    <p>Pellentesque in ipsum id orci porta dapibus. <a href="" data-animation="am-flip-x" bs-tooltip="tooltip"> Vestibulum</a> ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+
+	    <div class="input-group col-xs-5">
+	      <span class="input-group-btn">
+	        <!-- You can also use data-attrs to assign scope variables -->
+	        <button class="btn btn-primary" type="button" data-trigger="click" data-type="success" data-title="{{tooltip.title}}" bs-tooltip>Click me</button>
+	      </span>
+	      <input type="text" class="form-control" data-placement="right" data-type="info" data-container="body" placeholder="Focus to toggle tooltip" data-trigger="focus" bs-tooltip="tooltip">
+	    </div>
+
+	    <div class="checkbox">
+	      <label data-placement="bottom-left" data-type="info" data-animation="am-fade-and-scale" bs-tooltip="tooltip" bs-enabled="tooltip.checked">
+	        <input type="checkbox" ng-model="tooltip.checked" > Check me to enable my tooltip
+	      </label>
+	    </div>
+
+	</div>
+
+
+<!-- tooltip demo ends here -->
+
+<hr>
+
+<div class="panel panel-success">
+     
+
+      <div class="panel-heading">
+        <h3 class="panel-title">Popover Demo</h3>
+      </div>
+
+      <div class="panel-body">
+        	<!-- popover demo starts here -->
+
+			<div class="bs-docs-section" ng-controller="PopoverDemoCtrl">
+				
+				<button type="button" class="btn btn-lg btn-info" data-placement="bottom" data-animation="am-flip-x" bs-popover="popover">Click to toggle popover
+			      <br />
+			      <small>(using an object)</small>
+		    	</button>
+
+		    	<!-- You can also use data-attrs to assign scope variables -->
+			    <button type="button" class="btn btn-lg btn-warning" data-placement="top-right" title="{{popover.title}}" data-content="{{popover.content}}" data-trigger="focus" bs-popover>Click to toggle popover
+			      <br />
+			      <small>(using data-attrs)</small>
+			    </button>
+
+			    <!-- You can use a custom html template with the `data-template` attr -->
+			    <button type="button" class="btn btn-lg btn-danger" title="{{popover.title}}" data-content="{{popover.content}}" data-template="" data-animation="am-flip-x" data-auto-close="1" bs-popover>Custom Popover
+			      <br />
+			      <small>(using data-template)</small>
+			    </button>
+
+
+			</div>
+
+
+			<!-- popover demo ends here -->
+      </div>
+
+</div>
+
+<div class="panel panel-danger">
+	
+	<div class="panel-heading">
+
+		<h3 class="panel-title">Typehead demo</h3>
+		
+	</div>
+
+	<div class="panel-body">
+
+		<!-- typehead demo starts here -->
+		
+		<div ng-controller="TypeaheadDemoCtrl">
+			
+			<div class="form-group">
+				<label><i class="fa fa-globe"></i> State</label>
+		        <input type="text" class="form-control" ng-model="selectedState" ng-options="state for state in states" placeholder="Enter state" bs-typeahead>
+			</div>			
+	
+			<div class="form-group">
+		        <label>Icon</label>
+		        <input type="text" class="form-control" ng-model="selectedIcon" data-min-length="0" data-html="1" data-animation="am-flip-x" ng-options="icon as icon.label for icon in icons" placeholder="Enter icon" bs-typeahead>
+	        </div>
+      <hr>
+      <!-- Using an async data provider -->
+	      <div class="form-group">
+	        <label><i class="fa fa-home"></i> Address <small>(async via maps.googleapis.com)</small></label>
+	        <input type="text" class="form-control" ng-model="selectedAddress" data-animation="am-flip-x" ng-options="address.formatted_address as address.formatted_address for address in getAddress($viewValue)" placeholder="Enter address" bs-typeahead>
+	      </div>
+
+
+
+
+		</div>
+
+
+		<!-- typehead demo ends here -->
+		
+	</div>
+	
+</div>
+
+
+<div class="panel panel-warning">
+	
+	<div class="panel-heading">
+		<h3 class="panel-title">date picker</h3>	
+	</div>
+	
+	<div class="panel-body">
+
+		<form name="datepickerForm" class="form-inline" role="form">
+	      <!-- Basic example -->
+	      <div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+	        <label class="control-label"><i class="fa fa-calendar"></i> Date <small>(as date)</small></label>
+	        <input type="text" class="form-control" ng-model="selectedDate" name="date" bs-datepicker>
+	      </div>
+	      <!-- Custom example -->
+	      <div class="form-group" ng-class="{'has-error': datepickerForm.date2.$invalid}">
+	        <label class="control-label"><i class="fa fa-calendar"></i> Date <small>(as number)</small></label>
+	        <input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="02/10/86" data-max-date="today" data-autoclose="1" name="date2" bs-datepicker>
+	      </div>
+	      <hr>
+	      <!-- Date range example -->
+	      <div class="form-group">
+	        <label class="control-label"><i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i> Date range <small>(dynamic)</small></label><br>
+	        <div class="form-group col-xs-6">
+	          <input type="text" class="form-control" ng-model="fromDate"  data-max-date="{{untilDate}}" placeholder="From" bs-datepicker>
+	        </div>
+	        <div class="form-group col-xs-6">
+	          <input type="text" class="form-control" ng-model="untilDate"  data-min-date="{{fromDate}}" placeholder="Until" bs-datepicker>
+	        </div>
+	      </div>
+    	</form>
+		
+	</div>
+
+</div>.
+
+
+
+
+
+
+  </body>
+
+</html>

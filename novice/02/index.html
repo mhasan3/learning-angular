@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script> 
+    <script src="app.js"></script> 
+</head>
+
+<body ng-controller="myCtrl">
+	
+	{{greetings}} User! The current date/time is <span>{{now | date:'medium'}}</span>.
+	<br/>
+	<button ng-click="getRandomHelloMessage()">Random Hello Message</button>
+	
+
+	<input type="text" name="fbid" ng-model="fbid">
+
+	<span><img ng-src="https://graph.facebook.com/{{fbid}}/picture?type=large"></span>
+
+
+</body>
+</html>

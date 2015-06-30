@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script>
+		
+		function multiplier ( factor ) {
+			console.log("factor is:" + factor);
+			return function (number) { 
+				console.log("number is:" + number);
+				return factor * number ; 
+			};
+		}
+
+		var wrap1 = multiplier(3);
+		// var wrap2 = wrapValue(2);
+		
+		
+		console.log(wrap1(6));
+
+		
+	</script>
+	</head>
+<body>
+<!-- <p>hello</p> -->
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script> 
+    <script src="app.js"></script>
+    
+</head>
+
+<body>
+
+	<!-- <div class="col-sm-6 col-sm-offset-3" ng-app="test" ng-controller="showCtrl">
+		
+		<form>
+			<div class="form-group">
+				<label>Type an Animal <span class="text-muted">(cat, dog, lion, bear, turtle)</span></label>
+            	<input type="text" class="form-control" ng-model="aminal">
+			</div>
+		</form>	
+		
+	</div>
+
+	<div class="col-xs-6">
+        <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'cat'">
+        <img ng-src="http://i.imgur.com/gjLSTqX.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'dog'">
+        <img ng-src="http://i.imgur.com/bE17tmf.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'lion'">
+        <img ng-src="http://i.imgur.com/ICGkjN3.png" class="img-responsive img-thumbnail" ng-show="aminal == 'bear'">
+        <img ng-src="http://i.imgur.com/Zpf1dBi.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'turtle'">
+        <img ng-src="http://i.imgur.com/FPuRpuH.png" class="img-responsive img-thumbnail" ng-show="aminal == 'zombie'">
+        
+      </div> -->
+
+
+      <div class="col-sm-6" ng-app="test" ng-controller="showCtrl">
+
+      	<div class="col-xs-6">
+
+      		<input type="text" ng-model="animal">
+      		
+      	</div>
+
+      	<div class="col-xs-6">
+        	<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="animal == 'cat'">
+      		
+      	</div>
+      	
+      </div>
+	
+	
+	<!-- <div class="container" ng-app="test" ng-controller="showCtrl">
+
+
+    <div class="row">
+      <div class="col-xs-6">
+        <form>
+          <div class="form-group">
+            <label>Type an Animal <span class="text-muted">(cat, dog, lion, bear, turtle)</span></label>
+            <input type="text" class="form-control" ng-model="aminal">
+          </div>
+        </form>
+      </div>
+      
+      <div class="col-xs-6">
+        <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'cat'">
+        <img ng-src="http://i.imgur.com/gjLSTqX.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'dog'">
+        <img ng-src="http://i.imgur.com/bE17tmf.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'lion'">
+        <img ng-src="http://i.imgur.com/ICGkjN3.png" class="img-responsive img-thumbnail" ng-show="aminal == 'bear'">
+        <img ng-src="http://i.imgur.com/Zpf1dBi.jpg" class="img-responsive img-thumbnail" ng-show="aminal == 'turtle'">
+        <img ng-src="http://i.imgur.com/FPuRpuH.png" class="img-responsive img-thumbnail" ng-show="aminal == 'zombie'">
+        
+      </div>
+    </div>
+    
+	</div> -->
+
+
+
+</body>
+</html>

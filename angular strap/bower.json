@@ -1,0 +1,20 @@
+{
+  "name": "angular strap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mhasan3/learning-angular",
+  "authors": [
+    "mhasan3 <mahmudul69@hotmail.com>"
+  ],
+  "description": "angular strap test",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "test"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular-strap": "~2.2.0",
+    "angular-motion": "~0.3.4"
+  }
+}

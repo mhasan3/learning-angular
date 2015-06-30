@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>angualr app</title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script> 
+    <script src="app.js"></script> 
+</head>
+
+<body ng-controller="calCtrl">
+
+	<div>
+		<label for="salary">your salary?</label> 
+		<input type="text" name="salary" ng-model="salary">
+	</div>
+	
+	<div>
+		<label for="percentage">investment?</label>
+		<input type="text" name="percentage" ng-model="percentage">
+	</div>
+	
+	<!-- <button ng-click="{{result}}">calculate!</button> -->
+	<!-- you are searching for {{percentage}} -->
+	<div>{{result() | currency}}</div>
+
+</body>
+</html>

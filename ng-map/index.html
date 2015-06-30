@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script> 
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/lodash/dist/lodash.js"></script>
+	<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
+	<script type='text/javascript' src='scripts/app.js'></script>
+    <script type='text/javascript' src='scripts/mapCtrl.js'></script>
+    <script type='text/javascript' src='scripts/coordinateFilter.js'></script>
+    <script type='text/javascript' src='scripts/functions.js'></script>
+
+</head>
+
+<body ng-app="angular-coordinates" ng-controller="mapController">
+
+	<div id="map_canvas">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+                <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+
+        <div class="col-sm-6 col-sm-offset-3 coordinates-form">
+            <div class="col-sm-6">
+                <input type="text" ng-model="lat" class="form-control coordinate-input" placeholder="Enter Latitude" />
+            </div>
+            <div class="col-sm-6">
+                <input type="text" ng-model="lon" class="form-control coordinate-input" placeholder="Enter Longitude" />
+            </div>
+        </div>
+
+        <div class="info-box">
+
+        </div>          
+
+</body>
+</html>

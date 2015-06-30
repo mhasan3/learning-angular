@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app = "mgcrea.ngStrapDocs">
+<head>
+	<title></title>
+	
+     <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/angular-motion.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/static/styles/bootstrap-additions.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libraries.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/main.min.css">
+    <script src="//code.angularjs.org/1.3.8/angular.min.js" data-semver="1.3.8"></script>
+    <script src="//code.angularjs.org/1.3.8/angular-animate.min.js" data-semver="1.3.8"></script>
+    <script src="//code.angularjs.org/1.3.8/angular-sanitize.min.js" data-semver="1.3.8"></script>
+    <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.1.6"></script>
+    <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.1.6"></script>
+   
+</head>
+
+
+<body ng-controller="MainCtrl">
+	<div class="bs-docs-section" ng-controller="ModalDemoCtrl">
+
+		<!-- Button to trigger a default modal with a scope as an object {title:'', content:'', etc.} -->
+		<button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal">Click to toggle modal
+		  <br>
+		  <small>(using an object)</small>
+		</button>
+		<!-- You can use a custom html template with the `data-template` attr -->
+		<button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-scale" data-placement="center" data-template="tmpl.html" bs-modal="modal">Custom Modal
+		  <br>
+		  <small>(using data-template)</small>
+		</button>
+	<div class="bs-docs-section" ng-controller="ModalDemoCtrl">
+
+<script>
+
+	var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap']);
+
+	app.controller('MainCtrl', function($scope) {
+
+	});
+
+	'use strict';
+
+	angular.module('mgcrea.ngStrapDocs')
+
+	.config(function($modalProvider) {
+	  angular.extend($modalProvider.defaults, {
+	    html: true
+	  });
+	})
+
+	.controller('ModalDemoCtrl', function($scope, $modal) {
+	  $scope.modal = {title: 'this is Title', content: 'Hello Modal<br />This is a multiline message!'};
+
+	  // Controller usage example
+	  
+	  var myModal = $modal({title: 'Title', content: 'Hello Modal<br />This is a multiline message!', show: false});
+	  $scope.showModal = function() {
+	    myModal.$promise.then(myModal.show);
+	  };
+	  $scope.hideModal = function() {
+	    myModal.$promise.then(myModal.hide);
+	  };
+
+	});
+
+</script>
+
+</body>
+</html>
+
+
+
